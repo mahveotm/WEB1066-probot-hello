@@ -12,8 +12,14 @@ install:
 script:
     - docker run --rm probot-hello npm run test
     - docker run --rm probot-hello npm run lint
+<<<<<<< HEAD
 =======
 language: node_js
 node_js:
   - "8.3"
 >>>>>>> 385148a8e35e01653aebc241402b534661ebae83
+=======
+
+after_success:
+    - docker tag probot-hello probot-hello:$(git rev-parse HEAD)
+>>>>>>> b9f88934aba1ea247c4a5236f2236576eccface1
